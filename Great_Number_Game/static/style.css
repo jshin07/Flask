@@ -1,0 +1,9 @@
+
+div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 500px;
+    background-color: red;
+    display: inline-table;
+}

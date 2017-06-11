@@ -1,0 +1,12 @@
+body {
+    width: 100px;
+    height: 500px;
+}
+
+#content < div {
+    display: inline-block;
+}
+
+h3 {
+    color: red;
+}

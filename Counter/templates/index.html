@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Counter</title>
+    </head>
+    <body>
+        <h1> COUNTER </h1>
+        <p> {{session['count']}} times <p>
+        <form action='/addtwo' method="post">
+            <input type ="submit" name= "AddTwo" value="+Two">
+        </form>
+        <form action='/refresh' method="post">
+            <input type ="submit" name="Refresh" value="Refresh">
+        </form>
+    </body>
+</html>
