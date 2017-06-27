@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Email Validation with DB</title>
+</head>
+<body>
+
+    <h1>Success!</h1>
+
+
+    <span style= "background-color:green">The email address you entered {{session['email']}} is a VALID email address! Thank you! </span>
+
+    <h3> Email Address Entered: </h3>
+
+        {% for user in users %}
+        {{user['email']}} {{user['created_at']}}<br>
+        {% endfor %}
+
+    <form action ='/email' method='post'>
+        Email Address: <input type='text' name='email'>
+        <input type='submit' value='submit'>
+    </form>
+
+</body>
+</html>

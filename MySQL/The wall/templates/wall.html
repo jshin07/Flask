@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Coding Dojo Wall</title>
+    </head>
+    <body>
+        <div class = "header">
+            <h2> CodingDojo Wall </h2>
+            <h3> Welcome {{session['name']}}</h3>
+            <form action= '/logout' method = 'post'>
+                <input type= 'submit' name='logoff' value= 'Log Off'>
+            </form>
+        </div>
+        <div class= "container">
+            <h3> Post a message </h3>
+
+            <form action ='/post_msg' method='post'>
+                <textarea rows="10" cols="50" name="message"></textarea></br>
+                <input type='submit' value='Post a message'>
+            </form></br>
+                {% for x in messages %}
+                    <p><b>{{x.first_name}} {{x.last_name}} - {{x.created_at}}</b></p>
+                    {{x.message}}
+
+                    {% for y in comments %}
+                        {% if y.message_id== x.in %}
+                        </br>
+                        {{y.comment}}
+                        {% endif %}
+                    {% endfor %}
+
+                    <form action ='/post_com/{{x.in}}' method='post'>
+                        <textarea rows="5" cols="50" name="comment"></textarea></br>
+                        <input type='submit'  value='Post a comment'>
+                    </form></br>
+                {% endfor %}
+
+
+
+
+        </div>
+
+
+
+    </body>
+</html>
